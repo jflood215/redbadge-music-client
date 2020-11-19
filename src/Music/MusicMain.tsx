@@ -42,7 +42,7 @@ class MusicMain extends React.Component<MusicMainProps, MusicMainState> {
       <div style={{
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',}}>
+    justifyContent: 'center'}}>
         {/* <Typography component="h1" variant="h5">
           Sign In
         </Typography> */}
@@ -63,7 +63,7 @@ class MusicMain extends React.Component<MusicMainProps, MusicMainState> {
           onChange={(e) => this.setState({ artist: e.target.value })}
         />
         <Button
-        style={{display: 'flex', justifyContent: 'center'}}
+        style={{margin: '0 auto'}}
             type="submit"
             // fullWidth 
             variant="contained"

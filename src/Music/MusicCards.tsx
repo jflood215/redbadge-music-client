@@ -1,6 +1,6 @@
 import { Rating } from '@material-ui/lab';
 import { Button, Card, CardActions, CardContent, Collapse, createStyles, Grid, IconButton, makeStyles, TextField, Theme, Typography } from '@material-ui/core';
-import * as React from 'react';
+import React from 'react';
 import { TrackList } from './MusicInterface';
 import { red } from '@material-ui/core/colors';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -88,15 +88,15 @@ const MusicCards: React.SFC<MusicCardsProps> = (props: MusicCardsProps) => {
     return ( 
       
          <Grid item xs={4} sm={4} className={classes.cardspacing} key={props.index}>
-        <Card className={classes.root} style={{backgroundColor: 'lightsalmon'}}>
+        <Card className={classes.root} style={{backgroundColor: '#F50057'}}>
           <CardContent>
-            <Typography variant="body2" color='textPrimary' component="p">
+            <Typography variant="body2" color='textPrimary' component="p" style={{color: 'white'}}>
             {trackList.track.artist_name}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            {/* <Typography variant="body2" color="textSecondary" component="p" style={{color: 'white'}}>
             {trackList.track.album_name}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            </Typography> */}
+            <Typography variant="body2" color="textSecondary" component="p" style={{color: 'white'}}>
             {trackList.track.track_name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
@@ -120,12 +120,12 @@ const MusicCards: React.SFC<MusicCardsProps> = (props: MusicCardsProps) => {
           </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
-              <Typography>Ratings/Review:</Typography>
+              <Typography style={{color: 'white'}}>Ratings/Review:</Typography>
               <form className={classes.root} >
               <Rating  name={`${Math.random()*10}`} value={starRating} precision={1.0} onChange={(e, newValue) => setstarRating(newValue)} />
               </form>
               <form className={classes.root} noValidate autoComplete="off">
-              <TextField id="outlined-basic" label="Write a Review" variant="outlined" value={textField} onChange={(e) => setTextField(e.target.value) } />
+              <TextField style={{color: 'white'}} id="outlined-basic" label="Write a Review" variant="outlined" value={textField} onChange={(e) => setTextField(e.target.value) } />
               </form>
               <Button variant='outlined' color='secondary' onClick={(e) => handleSubmit()}>Click to Submit!</Button>
             </CardContent>
