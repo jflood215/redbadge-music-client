@@ -127,7 +127,7 @@ const MusicCards: React.SFC<MusicCardsProps> = (props: MusicCardsProps) => {
               <form className={classes.root} noValidate autoComplete="off">
               <TextField style={{color: 'white'}} id="outlined-basic" label="Write a Review" variant="outlined" value={textField} onChange={(e) => setTextField(e.target.value) } />
               </form>
-              <Button variant='outlined' color='secondary' onClick={(e) => handleSubmit()}>Click to Submit!</Button>
+              <Button variant='outlined' color='default' onClick={(e) => handleSubmit()}>Click to Submit!</Button>
             </CardContent>
           </Collapse>
         </Card>

@@ -1,18 +1,4 @@
 import React from 'react';
-// import Signup from "./Signup";
-// import Login from "./Login";
-
-// interface Props {
-//     setToken: any;
-//     updateToken: (token: string) => void;
-// }
- 
-
-//   export const Auth = ({ setToken }: Props) => {
-
-//   return (
-//       <Login />
-//   )}
 
 
 

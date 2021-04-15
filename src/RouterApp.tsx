@@ -35,21 +35,17 @@ export const RouterApp = (props: Props) => {
   };
 
   const clearToken = () => {
-    // localStorage.removeItem("token");
     localStorage.clear();
     setToken("");
   };
 
       const protectedViews = () => {
         console.log(token);
-    
-
       return (!token ? <Login setToken={updateToken} />  : <MusicMain URL={URL} token={token} />) 
     }
 
     const protectedViewsEvents = () => {
       return (!token ? <Login setToken={updateToken} />  : <EventMain token={token } />) 
-
     }
 
     const protectedViewsTables = () => {

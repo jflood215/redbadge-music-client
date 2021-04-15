@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Container from '@material-ui/core/Container';
+import '../../src/App.css'
 
 export interface MusicMainProps {
     URL: string;  
@@ -24,8 +25,7 @@ class MusicMain extends React.Component<MusicMainProps, MusicMainState> {
 
     onSearch = (e:any) => {
         e.preventDefault();
-        fetch(`https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.search?q_artist=${this.state.artist}&page_size=25&page=1&s_track_rating=desc&apikey=157843679a41620c9286f788772f29e0`)
-        // fetch(`https://yacdn.org/serve/https://api.musixmatch.com/ws/1.1/track.search?q_artist=${this.state.artist}&page_size=25&page=1&s_track_rating=desc&apikey=157843679a41620c9286f788772f29e0`)
+        fetch(`https://api.musixmatch.com/ws/1.1/track.search?q_artist=${this.state.artist}&page_size=24&page=1&s_track_rating=desc&apikey=157843679a41620c9286f788772f29e0`)
         .then((res) => res.json())
         .then((json:TrackResponse) => {
             console.log(json)
@@ -41,7 +41,7 @@ class MusicMain extends React.Component<MusicMainProps, MusicMainState> {
       <CssBaseline />
       <div style={{
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'center'}}>
         {/* <Typography component="h1" variant="h5">
           Sign In
@@ -63,12 +63,11 @@ class MusicMain extends React.Component<MusicMainProps, MusicMainState> {
           onChange={(e) => this.setState({ artist: e.target.value })}
         />
         <Button
-        style={{margin: '0 auto'}}
+        style={{margin: '1em 40% 1em', textTransform: 'none'}}
             type="submit"
             // fullWidth 
             variant="contained"
             color="secondary"
-            // style={{marginBottom: '0.8em'}}
             onClick={(e) => this.onSearch(e)}
           >
             Search

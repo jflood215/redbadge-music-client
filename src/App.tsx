@@ -12,12 +12,3 @@ function App() {
 }
 
 export default App;
-
-// return (
-//   <div className="App">
-//     <Login setToken={setToken} />
-//   </div>
-// );
-// }
-
-// export default App;
