@@ -25,7 +25,7 @@ class MusicMain extends React.Component<MusicMainProps, MusicMainState> {
 
     onSearch = (e:any) => {
         e.preventDefault();
-        fetch(`https://api.musixmatch.com/ws/1.1/track.search?q_artist=${this.state.artist}&page_size=24&page=1&s_track_rating=desc&apikey=157843679a41620c9286f788772f29e0`)
+        fetch(`https://api.musixmatch.com/ws/1.1/track.search?q_artist=${this.state.artist}&page_size=24&page=1&s_track_rating=desc&apikey=${process.env.REACT_APP_API_KEY}`)
         .then((res) => res.json())
         .then((json:TrackResponse) => {
             console.log(json)
