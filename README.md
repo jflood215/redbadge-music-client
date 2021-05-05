@@ -53,19 +53,19 @@
 
 ### Login/Signup
 
-![Login:Signup](https://imgur.com/XHQZVCi)
+![Login:Signup](https://imgur.com/XHQZVCi.png)
 
 ### Music API Fetch
 
-![Music](https://imgur.com/ElGN59Z)
+![Music](https://imgur.com/ElGN59Z.png)
 
 ### Music Review
 
-![Music Review](https://imgur.com/SebixcU)
+![Music Review](https://imgur.com/SebixcU.png)
 
 ### Events
 
-![Events](https://imgur.com/wtm24uY)
+![Events](https://imgur.com/wtm24uY.png)
 
 ### Admin
 
