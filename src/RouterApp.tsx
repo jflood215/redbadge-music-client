@@ -19,7 +19,7 @@ interface Props {
 
 export const RouterApp = (props: Props) => {
   const [artist, setArtist] = useState('');
-    const URL = (`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.search?format=json&q_artist=${artist}&page_size=24&page=1&s_track_rating=desc&apikey=${process.env.REACT_APP_API_KEY}`)
+    const URL = (`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.search?format=json&q_artist=${artist}&page_size=24&page=1&s_track_rating=desc&apikey=157843679a41620c9286f788772f29e0`)
   const [token, setToken] = useState<string | null>('');
 
 
