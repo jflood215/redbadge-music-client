@@ -19,7 +19,7 @@ interface Props {
 
 export const RouterApp = (props: Props) => {
   const [artist, setArtist] = useState('');
-    const URL = `http://api.musixmatch.com/ws/1.1/track.search?q_artist=${artist}&page_size=20&page=1&s_track_rating=desc&apikey=b4e045669f1de0e2ba866086653af11f`
+    const URL = `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.search?format=json&q_artist=${artist}&page_size=24&page=1&s_track_rating=desc&apikey=${process.env.REACT_APP_API_KEY}`
   const [token, setToken] = useState<string | null>('');
 
 
@@ -40,7 +40,6 @@ export const RouterApp = (props: Props) => {
   };
 
       const protectedViews = () => {
-        console.log(token);
       return (!token ? <Login setToken={updateToken} />  : <MusicMain URL={URL} token={token} />) 
     }
 

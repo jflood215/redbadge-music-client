@@ -10,7 +10,6 @@ import '../../src/App.css'
 export interface MusicMainProps {
     URL: string;  
     token: string;
-    // trackList : TrackList
 }
 export interface MusicMainState {
     Message: TrackResponse  | undefined;
@@ -22,15 +21,13 @@ class MusicMain extends React.Component<MusicMainProps, MusicMainState> {
         this.state = {Message : undefined, artist: '' };
     }
 
-
     onSearch = (e:any) => {
         e.preventDefault();
-        fetch(`https://api.musixmatch.com/ws/1.1/track.search?q_artist=${this.state.artist}&page_size=24&page=1&s_track_rating=desc&apikey=${process.env.REACT_APP_API_KEY}`)
+        fetch(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.search?format=json&q_artist=${this.state.artist}&page_size=24&page=1&s_track_rating=desc&apikey=${process.env.REACT_APP_API_KEY}`)
         .then((res) => res.json())
         .then((json:TrackResponse) => {
             console.log(json)
             this.setState({Message:json})
-            
         })
     }
     render() { 
@@ -43,15 +40,12 @@ class MusicMain extends React.Component<MusicMainProps, MusicMainState> {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center'}}>
-        {/* <Typography component="h1" variant="h5">
-          Sign In
-        </Typography> */}
+
         <form style={{width: '100%' // Fix IE 11 issue.
     }}>
           <TextField
           variant="outlined"
           margin="normal"
-          // required
           fullWidth
           id="search"
           label="Search"
@@ -59,13 +53,11 @@ class MusicMain extends React.Component<MusicMainProps, MusicMainState> {
           autoComplete="off"
           autoFocus
           type="text"
-          // required
           onChange={(e) => this.setState({ artist: e.target.value })}
         />
         <Button
         style={{margin: '1em 40% 1em', textTransform: 'none'}}
             type="submit"
-            // fullWidth 
             variant="contained"
             color="secondary"
             onClick={(e) => this.onSearch(e)}
@@ -76,7 +68,7 @@ class MusicMain extends React.Component<MusicMainProps, MusicMainState> {
           </div>
 </Container>
           
-            {this.state.Message!==undefined ?  < MusicDisplay  token={this.props.token} message={this.state.Message}/> : <></>}
+            {this.state.Message!== undefined ?  < MusicDisplay  token={this.props.token} message={this.state.Message}/> : <></>}
             </div>
          );
     }
