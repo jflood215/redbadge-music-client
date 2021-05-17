@@ -1,6 +1,6 @@
 # Red Vinyl
 
-### This app is designed for any and all muic lovers. Whether you're looking for your favorite song lyrics, or creating a list of concerts that you'd like to go to, we've got you covered!
+### This app is designed for any and all music lovers. Whether you're looking for your favorite song lyrics, or creating a list of concerts that you'd like to go to, we've got you covered!
 
 ## Created by Game of Threads:
 
